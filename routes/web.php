@@ -20,10 +20,8 @@ Route::get('/', function () {
 
 Auth::routes(['register' => false]);
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+        Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['middleware' => 'auth'],function(){
-    Route::get('/dashboard', [DashboardController::class, 'index']);
+        Route::group(['middleware' => 'auth'],function(){
+        Route::get('/dashboard', [DashboardController::class, 'index']);
 });
-
-
